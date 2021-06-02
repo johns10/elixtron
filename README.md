@@ -13,3 +13,9 @@ To use the companion application, you will need to set up a custom protocol that
 I used these instructions because I'm on Windows: https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols
 
 I haven't test these, but here's some linux instructions: https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols
+
+## Props
+
+This project was generated using the FullstackPhoenix boilerplate generator: https://fullstackphoenix.com/boilerplates
+
+Much love to the bakeware folks for their great library: https://github.com/bake-bake-bake/bakeware
