@@ -1,0 +1,28 @@
+<h3 class="text-xl text-center text-gray-600 dark:text-gray-200">Forgot your password?</h3>
+
+<%= form_for :user, @action, [as: :user], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="mt-4">
+    <%= label f, :email, class: "block text-gray-600 dark:text-gray-200 text-sm font-medium mb-2" %>
+    <%= email_input f, :email, required: true, class: "form-control" %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="mt-8">
+    <%= submit "Send instructions to reset password", class: "btn btn-primary w-full" %>
+  </div>
+<% end %>
+
+<div class="flex items-center justify-between mt-6">
+  <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+
+  <%= link "Register", to: Routes.pow_registration_path(@conn, :new), class: "text-xs text-gray-500 dark:text-gray-400 uppercase hover:underline" %>
+  <%= link "Log in", to: Routes.pow_session_path(@conn, :new), class: "text-xs text-gray-500 dark:text-gray-400 uppercase hover:underline" %>
+
+  <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+</div>

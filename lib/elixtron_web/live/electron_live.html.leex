@@ -1,0 +1,6 @@
+<section class="text-center">
+  <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"><%= gettext "Welcome to %{name}!", name: "Another Elixtron Page!" %></h1>
+
+  <%= link("Open Browser", to: "#", phx_click: "open-browser", phx_hook: "browserOpener", id: "browser-opener") %>
+  <%= link("Close Browser", to: "#", phx_click: "close-browser", phx_hook: "browserCloser", id: "browser-closer") %>
+</section>

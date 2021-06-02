@@ -1,0 +1,7 @@
+<%= if @current_user do %>
+  <%= @current_user.email %>
+  <%= link "Log out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
+<% else %>
+  <%= link "Sign In", to: Routes.pow_session_path(@conn, :new) %>
+  <%= link "Register", to: Routes.pow_registration_path(@conn, :new) %>
+<% end %>

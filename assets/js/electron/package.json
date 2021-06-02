@@ -1,0 +1,16 @@
+{
+  "name": "elixtron-desktop",
+  "version": "1.0.0",
+  "description": "Sample Live View Electron App",
+  "main": "index.js",
+  "repository": "https://github.com/johns10/elixtron",
+  "author": "John Davenport",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^13.0.1",
+    "puppeteer": "^9.1.1"
+  }
+}
