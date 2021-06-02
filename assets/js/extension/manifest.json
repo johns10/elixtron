@@ -1,0 +1,27 @@
+  
+{
+	"name": "Elixtron",
+	"manifest_version": 3,
+	"description": "Sample deployment of a chrome extension with live view",
+	"version": "1.0",
+	"background": {
+    "service_worker": "background.js"
+	},
+	"action": {
+		"default_icon": "elixtron.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"],
+			"run_at": "document_end",
+			"all_frames": false
+		}
+	],
+	"permissions": [
+		"cookies",
+		"activeTab",
+		"storage",
+		"desktopCapture"
+	]
+}
