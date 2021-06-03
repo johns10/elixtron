@@ -13,8 +13,26 @@ https://github.com/johns10/elixtron_desktop
 https://github.com/johns10/elixtron
 
 ----
+![bg left:40% 80%](profile.png)
+
+# John Davenport
+
+### Head of Implementations at FunnelCloud
+### Founder and only human at UserDocs
+### Not this good looking in person
+
+----
+![bg left:40% 80%](userdocs_architecture.png)
+# UserDocs
+Automatically collects screenshots from web applications running in the user's WAN
+## LiveView
+Only acts as the web interface for authoring the processes
+## localhost
+Must open a local browser, and simulate user action
+
+----
 # The Challenge
-Open browser, run automation configured by the user in a LiveView Application
+Open browser locally, with users settings, and run automation
 ## Honorable Mention
 Chrome Extension
 ## Production Solution
@@ -23,7 +41,13 @@ Electron App
 Bakeware binary, called from custom protocol, calls Chrome Devtools Protocol locally 
 
 ----
+# Before You Start
+## Use a host name, and make a root CA
+Extensions and Elixir will not tolerate any funny business
+
+----
 # Chrome Extension
+Probably just drop it
 LiveView applications get this for free, because LiveView uses pushState for navigation
 ```
 # background.js
@@ -63,3 +87,9 @@ Assembled with [Bakeware](https://github.com/bake-bake-bake/bakeware), start as 
 Rendered directly on the page with custom protocol [elixtron://call()](elixtron://ElixtronDesktop.do_stuff())
 ## Result
 Post responses directly back through API
+
+----
+# It's an Application with a GenServer
+
+----
+# CICD Stuff
