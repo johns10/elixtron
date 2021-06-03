@@ -44,21 +44,8 @@ Bakeware binary, called from custom protocol, calls Chrome Devtools Protocol loc
 # Before You Start
 ## Use a host name, and make a root CA
 Extensions and Elixir will not tolerate any funny business
-
-----
-# Chrome Extension
-Probably just drop it
-LiveView applications get this for free, because LiveView uses pushState for navigation
-```
-# background.js
-chrome.action.onClicked.addListener(function(tab) {
- chrome.windows.create({
-	url: "https://dev.elixtron.com:4000",
-	type: "popup" 
-  }); 
-});
-```
-That's basically it. Call the chrome api from your hooks. Hard code the base url for normal HTTP calls, because they don't use pushState.
+## Remember window.location
+This is where LiveView gets the host name it passes to the Plug when it connects, you can use to avoid name errors, "fix" http calls, and identify which "app" is connecting to the server.
 
 ----
 # Electron Application
@@ -80,7 +67,7 @@ browserOpener: { mounted() {
 ----
 # Elixtron Desktop 
 
-![bg left:40% 80%](architecture.png)
+![bg left:40% 75%](architecture.png)
 ## Binary
 Assembled with [Bakeware](https://github.com/bake-bake-bake/bakeware), start as daemon or service
 ## Calls
@@ -90,6 +77,10 @@ Post responses directly back through API
 
 ----
 # It's an Application with a GenServer
+Seriously, it's that simple
+## Bakeware deploys with mix release
+The binary supports a start command, which does the obvious, and an RPC command, which allows calls to the running instance
 
 ----
+![bg left:40% 70%](cicd_architecture.svg)
 # CICD Stuff

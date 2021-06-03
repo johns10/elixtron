@@ -1,0 +1,16 @@
+  @startuml
+  cloud {
+    [Elixir Host] -down-> () graphql
+  }
+
+  package "container" {
+    () graphql <-down-> [Runner]
+    [Runner] <-left-> [Test]
+    [Runner] <-down-> [Browser]
+    [Test] <-down-> [Browser]
+  }
+
+
+  Browser <-down-> [LAN Device]
+  Browser <-down-> [WAN Device]
+@enduml

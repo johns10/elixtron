@@ -1,0 +1,26 @@
+  @startuml
+  cloud {
+    [Elixir Host]
+  }
+
+  package "browser" {
+    () hooks
+    () ui
+    [Elixir Host] <-down-> [LiveView]
+    hooks <-up-> [LiveView]
+    ui <-up-> [LiveView]
+  }
+
+  package "localhost" {
+    hooks <-down-> [Electron]
+    [Electron] <-left-> [Puppeteer]
+    [Puppeteer] <-left-> [Chrome]
+  }
+
+
+  ui <-left-> [User]
+  [User] <-down-> Chrome
+  [User]
+  Chrome <-down-> [LAN Device]
+  Chrome <-down-> [WAN Device]
+@enduml
