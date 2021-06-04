@@ -43,7 +43,7 @@ Bakeware binary, called from custom protocol, calls Chrome Devtools Protocol loc
 ----
 # Before You Start
 ## Use a host name, and make a root CA
-Extensions and Elixir will not tolerate any funny business
+Extensions and Electron will not tolerate any funny business
 ## Remember window.location
 This is where LiveView gets the host name it passes to the Plug when it connects, you can use to avoid name errors, "fix" http calls, and identify which "app" is connecting to the server.
 
@@ -83,4 +83,7 @@ The binary supports a start command, which does the obvious, and an RPC command,
 
 ----
 ![bg left:40% 70%](cicd_architecture.svg)
-# CICD Stuff
+# CICD Release
+## Gets recipes from API
+## Runs local, headless
+## Delivers screenshots to AWS
